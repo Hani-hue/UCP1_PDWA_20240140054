@@ -5,15 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1 style="text-align: center;">Gallery</h1>
-    <p>Gambar</p>
-    <img src="kicaw.png" alt="gambar screeshoot">
-    <iframe src="" frameborder="1">ini video</iframe>
+    <header>
+        <h1>Tech Community</h1>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./gallery.html">Gallery</a></li>
+                <li><a href="./form.html">Form</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="media-container">
+            <h2>Kumpulan video</h2>
+            <div class="card">
+                <h3>Dokumentasi Gambar</h3>
+                <div class="image-box">
+                    <img src="gambar1.jpg" alt="Foto Komunitas">
+                    <img src="gambar2.jpg" alt="Foto Komunitas">
+                    <img src="gambar3.jpg" alt="Foto Komunitas">
+                </div>
+                <button onclick="gantiGambar()" class="btn-action">Ganti Gambar</button>
+            </div>
+            
+        </section>
+    </main>
     <audio src=""></audio>
-    <a href="./index.html"></a>
+    <a href="./index.html">Kembali ke Home</a>
 </body>
 
 </html>
