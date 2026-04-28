@@ -32,6 +32,16 @@
                 </div>
                 <button onclick="gantiGambar()" class="btn-action">Ganti Gambar</button>
             </div>
+            <div class="card">
+                <h3>Podcast Tech</h3>
+                <audio id="myAudio">
+                    <source src="audio1.m4a" type="audio/mp4">
+                </audio>
+                <div class="controls">
+                    <button onclick="playAudio()" class="btn-play">Play</button>
+                    <button onclick="pauseAudio()" class="btn-pause">Pause</button>
+                </div>
+            </div>
 
             <div class="card">
                 <div class="video-grid">
@@ -53,19 +63,19 @@
             </div>
             <div class="card video-card">
                 <h4>Cyber Security</h4>
-                <video id="videoCyber"><source src="cyber_security.mp4" type="video/mp4"></video>
+                <video id="videoCyber"><source src="cyber.mp4" type="video/mp4"></video>
                 <div class="controls">
                     <button onclick="controlVideo('videoCyber', 'play')" class="btn-play">Play</button>
                     <button onclick="controlVideo('videoCyber', 'stop')" class="btn-stop">Stop</button>
                 </div>
             </div>
 
-            </div>
+        </div>
             
         </section>
     </main>
     <audio src=""></audio>
-    <a href="./index.html">Kembali ke Home</a>
+    <script src="script.js"></script>
 </body>
 
 </html>
