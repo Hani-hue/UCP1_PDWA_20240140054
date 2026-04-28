@@ -34,17 +34,23 @@
             </div>
 
             <div class="card">
-                <h3>Video Tutorial</h3>
-                <div class="video-box">
-                    <div class="card video-card">
-                        <h4>Mobile Development</h4>
-                        <video id="videoMobile"></video><video src="mobile dev.mp4" type="video/mp4"></video>
-                        <div class="controls">
-                            <button onclick="playVideo('videoMobile', 'play')" class="btn-action">Play</button>
-                            <button onclick="pauseVideo('videoMobile', 'pause')" class="btn-action">Pause</button>
-                        </div>
-                    </div>
+                <div class="video-grid">
+            <div class="card video-card">
+                <h4>Mobile Dev</h4>
+                <video id="videoMobile"><source src="mobile dev.mp4" type="video/mp4"></video>
+                <div class="controls">
+                    <button onclick="controlVideo('videoMobile', 'play')" class="btn-play">Play</button>
+                    <button onclick="controlVideo('videoMobile', 'stop')" class="btn-stop">Stop</button>
                 </div>
+            </div>
+            <div class="card video-card">
+                <h4>Web Dev</h4>
+                <video id="videoWeb"><source src="web dev.mp4" type="video/mp4"></video>
+                <div class="controls">
+                    <button onclick="controlVideo('videoWeb', 'play')" class="btn-play">Play</button>
+                    <button onclick="controlVideo('videoWeb', 'stop')" class="btn-stop">Stop</button>
+                </div>
+            </div>
 
             </div>
             
