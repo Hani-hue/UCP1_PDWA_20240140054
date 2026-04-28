@@ -5,13 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1 style="text-align: center;">Silahkan isi identitas anda disini</h1>
-    <input type="text" name="name" id="nama">
+    <header>
+        <h1>Tech Community</h1>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./gallery.html">Gallery</a></li>
+                <li><a href="./form.html">Form</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <h1 style="text-align: center;">Silahkan isi identitas anda disini</h1>
+            <form action="index.html" class="form-card">
+            <div class="input-group">
+                <label for="nama">Nama</label>
+                <input type="text" name="name" id="nama" placeholder="Masukkan Nama Lengkap Anda">
+            </div>
+            </form>
     <input type="text" name="email" id="email">
     <select name="bidang minat" id="bidang minat"></select>
+    </div>
 
     <form action="form.html"></form>
     <button type="submit" ; style="text-align: left; height: 27px; width: 25px; "></button>
