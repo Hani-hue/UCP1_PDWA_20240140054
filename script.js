@@ -1,20 +1,39 @@
 let dataAnggota = [];
 
-document.addEventListener('DOMContentLoaded', function() {
-    const memberForm = document.getElementById('memberForm');
-
     function controlVideo(videoId, action) {
-        const video = document.getElementById(videoId);
-
-        if (video) {
+    const video = document.getElementById(videoId);
+    if (video) {
         if (action === 'play') {
             video.play();
         } else if (action === 'stop') {
             video.pause();
-            video.currentTime = 0; 
+            video.currentTime = 0;
         }
     }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const allSeekBars = document.querySelectorAll('.seekBar');
+
+    allSeekBars.forEach(seekBar => {
+        const videoId = seekBar.getAttribute('data-video');
+        const video = document.getElementById(videoId);
+
+        if (video) {
+            video.addEventListener('loadedmetadata', function() {
+                seekBar.max = Math.floor(video.duration);
+            });
+
+            video.addEventListener('timeupdate', function() {
+                seekBar.value = Math.floor(video.currentTime);
+            });
+
+            seekBar.addEventListener('input', function() {
+                video.currentTime = seekBar.value;
+            });
+        }
+    });
+});
 
 function playAudio() {
     const audio = document.getElementById('myAudio');
@@ -31,53 +50,38 @@ function pauseAudio() {
     }
 }
 
+    document.addEventListener('DOMContentLoaded', function() {
+   
 
-
-
-function toggleMenu() {
-    const nav = document.getElementById("sideNav");
-    if (nav.style.width === "100%") {
-        nav.style.width = "0";
-    } else {
-        nav.style.width = "100%"; 
-    }
-}
-
-
-
-
+    const memberForm = document.getElementById('memberForm');
     if (memberForm) {
         memberForm.addEventListener('submit', function(e) {
             e.preventDefault();
-        
+            
             const nama = document.getElementById('nama').value;
             const email = document.getElementById('email').value;
-            const bidangMinat = document.getElementById('bidangMinat').value;
+            const bidangMinat = document.getElementById('bidang-minat').value;
             const usia = document.getElementById('usia').value;
 
             if (nama.trim() === "" || email.trim() === "" || bidangMinat === "" || usia === "") {
-                alert("Pendaftaran Gagal! Harap isi semua kolom yang tersedia.");
-                return; 
+                alert("Pendaftaran Gagal! Harap isi semua kolom.");
+                return;
             }
 
-            const dataAnggota = {
+            const anggotaBaru = {
                 nama: nama,
                 email: email,
                 minat: bidangMinat,
                 usia: usia
             };
 
-            dataAnggota.push({ nama, email, bidangMinat, usia });
+            let daftarAnggota = JSON.parse(localStorage.getItem('databaseAnggota')) || [];
+            daftarAnggota.push(anggotaBaru);
+            localStorage.setItem('databaseAnggota', JSON.stringify(daftarAnggota));
 
-            alert("Data Anggota Berhasil Disimpan!\n\n" + 
-                  "Nama: " + dataAnggota[dataAnggota.length - 1].nama + "\n" +
-                  "Email: " + dataAnggota[dataAnggota.length - 1].email + "\n" +
-                  "Minat: " + dataAnggota[dataAnggota.length - 1].minat + "\n" +
-                  "Usia: " + dataAnggota[dataAnggota.length - 1].usia);
-
-                  console.log("Daftar Anggota Komunitas:", dataAnggota);
-
+            alert("Data Anggota Berhasil Disimpan!");
             memberForm.reset();
+            window.location.href = "index.html";
         });
     }
 });

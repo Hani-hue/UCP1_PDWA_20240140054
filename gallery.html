@@ -28,7 +28,7 @@
 
     <main class="container">
         <section class="media-container">
-            <h2>Kumpulan video</h2>
+
             <div class="card">
                 <h3>Dokumentasi Gambar</h3>
                 <div class="image-box">
@@ -54,32 +54,43 @@
     </div>
 </div>
 
-            <div class="card">
-                <div class="video-grid">
-            <div class="card video-card">
-                <h4>Mobile Dev</h4>
-                <video id="videoMobile"><source src="mobile dev.mp4" type="video/mp4"></video>
-                <div class="controls">
-                    <button onclick="controlVideo('videoMobile', 'play')" class="btn-play">Play</button>
-                    <button onclick="controlVideo('videoMobile', 'stop')" class="btn-stop">Stop</button>
-                </div>
-            </div>
-            <div class="card video-card">
-                <h4>Web Dev</h4>
-                <video id="videoWeb"><source src="web dev.mp4" type="video/mp4"></video>
-                <div class="controls">
-                    <button onclick="controlVideo('videoWeb', 'play')" class="btn-play">Play</button>
-                    <button onclick="controlVideo('videoWeb', 'stop')" class="btn-stop">Stop</button>
-                </div>
-            </div>
-            <div class="card video-card">
-                <h4>Cyber Security</h4>
-                <video id="videoCyber"><source src="cyber.mp4" type="video/mp4"></video>
-                <div class="controls">
-                    <button onclick="controlVideo('videoCyber', 'play')" class="btn-play">Play</button>
-                    <button onclick="controlVideo('videoCyber', 'stop')" class="btn-stop">Stop</button>
-                </div>
-            </div>
+            <div class="video-grid">
+    <div class="card video-card">
+        <h4>Mobile Dev</h4>
+        <video id="videoMobile"><source src="mobile dev.mp4" type="video/mp4"></video>
+        <div class="seek-container">
+            <input type="range" class="seekBar" data-video="videoMobile" value="0" step="1">
+        </div>
+        <div class="controls">
+            <button onclick="controlVideo('videoMobile', 'play')" class="btn-play">Play</button>
+            <button onclick="controlVideo('videoMobile', 'stop')" class="btn-stop">Stop</button>
+        </div>
+    </div>
+
+    <div class="card video-card">
+        <h4>Web Dev</h4>
+        <video id="videoWeb"><source src="web dev.mp4" type="video/mp4"></video>
+        <div class="seek-container">
+            <input type="range" class="seekBar" data-video="videoWeb" value="0" step="1">
+        </div>
+        <div class="controls">
+            <button onclick="controlVideo('videoWeb', 'play')" class="btn-play">Play</button>
+            <button onclick="controlVideo('videoWeb', 'stop')" class="btn-stop">Stop</button>
+        </div>
+    </div>
+
+    <div class="card video-card">
+        <h4>Cyber Security</h4>
+        <video id="videoCyber"><source src="cyber.mp4" type="video/mp4"></video>
+        <div class="seek-container">
+            <input type="range" class="seekBar" data-video="videoCyber" value="0" step="1">
+        </div>
+        <div class="controls">
+            <button onclick="controlVideo('videoCyber', 'play')" class="btn-play">Play</button>
+            <button onclick="controlVideo('videoCyber', 'stop')" class="btn-stop">Stop</button>
+        </div>
+    </div>
+</div>
 
         </div>
             
