@@ -39,7 +39,7 @@ function toggleMenu() {
     if (nav.style.width === "100%") {
         nav.style.width = "0";
     } else {
-        nav.style.width = "100%"; // Membuka menu secara penuh (overlay)
+        nav.style.width = "100%"; 
     }
 }
 

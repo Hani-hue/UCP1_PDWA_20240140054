@@ -10,15 +10,20 @@
 
 <body>
     <header>
-        <h1>Tech Community</h1>
-        <nav>
-            <ul>
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./gallery.html">Gallery</a></li>
-                <li><a href="./form.html">Form</a></li>
-            </ul>
-        </nav>
+        <div class="header-content">
+            <h1>Tech Community</h1>
+            <span class="menu-icon" onclick="toggleMenu()">&#9776; Menu</span>
+        </div>
     </header>
+
+    <div id="sideNav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">&times;</a>
+            <div class="sidenav-links">
+                <small>01.</small> <a href="./index.html">Home</a>
+                <small>02.</small> <a href="./form.html">Join Us</a>
+                <small>03.</small> <a href="./gallery.html">Gallery</a>
+            </div>
+    </div>
     
     <div class="container">
         <h1 style="text-align: center;">Silahkan isi identitas anda disini</h1>
@@ -41,12 +46,13 @@
                     <option value="">Pilih Bidang Minat</option>
                     <option value="web-development">Web Development</option>
                     <option value="mobile-development">Mobile Development</option>
-                    <option value="data-science">Data Science</option>
+                    <option value="data-science">Cyber Security</option>
                 </select>
             </div>
             <button type="submit">Kirim</button>
         </form>
     </div>
+    <script src="script.js"></script>
     </body>
 
 </html>
