@@ -11,8 +11,16 @@ document.addEventListener('DOMContentLoaded', function() {
             video.play();
         } else if (action === 'stop') {
             video.pause();
-            video.currentTime = 0; // Mengembalikan video ke awal (Stop)
+            video.currentTime = 0; 
         }
+    }
+}
+
+function playAudio() {
+    const audio = document.getElementById('myAudio');
+    if (audio) {
+        audio.play();
+        alert("Audio sedang diputar!"); 
     }
 }
 
