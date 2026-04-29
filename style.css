@@ -1,4 +1,4 @@
-/* Menggunakan palet warna dari referensi */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 :root {
     --ink-black: #0D1B2A;
     --prussian-blue: #1B263B;
@@ -16,7 +16,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: var(--alabaster-grey); /* Warna Alabaster Grey */
     color: var(--ink-black); /* Warna Ink Black */
     line-height: 1.6;
@@ -66,7 +66,7 @@ nav a:hover, nav a.active {
     border: 1px solid var(--lavender-grey);
 }
 
-/* Tabel [cite: 19] */
+
 .table-wrapper {
     overflow-x: auto;
     margin-top: 20px;
@@ -274,7 +274,7 @@ button {
 /* Tombol Kedua (Kembali) */
 .btn-secondary {
     background-color: #778DA9; /* Warna Lavender Grey */
-    color: white;
+    color: rgb(7, 7, 7);
 }
 
 /* Efek saat kursor diarahkan ke tombol */
@@ -308,12 +308,13 @@ header {
 }
 
 .nav-container {
-    max-width: 1100px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 40px;
+    box-sizing: border-box;
 }
 
 .logo {
@@ -461,4 +462,40 @@ header {
 
 .btn-pause:hover {
     background: #e9ecef;
+}
+
+.gallery-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 15px;
+    background-color: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+#galleryImg {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    display: block;
+}
+
+.seek-container {
+    width: 100%;
+    margin: 15px 0;
+}
+
+#audioSeekBar {
+    width: 100%;
+    cursor: pointer;
+    accent-color: #0D1B2A;
+    height: 5px;
+    display: block;
+}
+
+#audioSeekBar:hover {
+    height: 7px;
 }
