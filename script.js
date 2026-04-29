@@ -32,6 +32,8 @@ document.addEventListener('DOMContentLoaded', function() {
                   "Minat: " + dataAnggota[dataAnggota.length - 1].minat + "\n" +
                   "Usia: " + dataAnggota[dataAnggota.length - 1].usia);
 
+                  console.log("Daftar Anggota Komunitas:", dataAnggota);
+
             memberForm.reset();
         });
     }
