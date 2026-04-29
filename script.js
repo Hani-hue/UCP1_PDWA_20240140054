@@ -12,10 +12,17 @@ document.addEventListener('DOMContentLoaded', function() {
             const bidangMinat = document.getElementById('bidangMinat').value;
             const usia = document.getElementById('usia').value;
 
-            if (nama.trim() === "" || email.trim() === "" || minat === "") {
+            if (nama.trim() === "" || email.trim() === "" || bidangMinat === "" || usia === "") {
                 alert("Pendaftaran Gagal! Harap isi semua kolom yang tersedia.");
-                return; // Menghentikan proses jika ada field kosong
+                return; 
             }
+
+            const dataAnggota = {
+                nama: nama,
+                email: email,
+                minat: bidangMinat,
+                usia: usia
+            };
 
             dataAnggota.push({ nama, email, bidangMinat, usia });
 
