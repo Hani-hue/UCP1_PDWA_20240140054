@@ -1,0 +1,459 @@
+/* Menggunakan palet warna dari referensi */
+:root {
+    --ink-black: #0D1B2A;
+    --prussian-blue: #1B263B;
+    --dusk-blue: #415A77;
+    --lavender-grey: #778DA9;
+    --alabaster-grey: #E0E1DD;
+    --white: #ffffff;
+    --danger: #e94560;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--alabaster-grey); /* Warna Alabaster Grey */
+    color: var(--ink-black); /* Warna Ink Black */
+    line-height: 1.6;
+}
+
+
+header {
+    background-color: var(--ink-black);
+    color: var(--white);
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+nav a {
+    color: var(--lavender-grey);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    color: var(--white);
+    border-bottom: 2px solid var(--white);
+}
+
+
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+
+.card {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+    border: 1px solid var(--lavender-grey);
+}
+
+/* Tabel [cite: 19] */
+.table-wrapper {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--lavender-grey);
+}
+
+th {
+    background-color: var(--prussian-blue); /* Warna Prussian Blue */
+    color: var(--white);
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Form [cite: 22] */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--prussian-blue);
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--lavender-grey);
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+input:focus, select:focus {
+    border-color: var(--dusk-blue);
+    outline: none;
+}
+
+/* Tombol [cite: 15] */
+button, .btn-back {
+    display: inline-block;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+    text-decoration: none;
+}
+
+.btn-primary { background-color: var(--prussian-blue); color: var(--white); }
+.btn-submit { background-color: var(--dusk-blue); color: var(--white); width: 100%; }
+.btn-play { background-color: var(--prussian-blue); color: var(--white); }
+.btn-stop { background-color: var(--danger); color: var(--white); }
+
+button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.2);
+}
+
+/* Grid untuk Video di Gallery [cite: 30] */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.video-card h4 {
+    margin-bottom: 10px;
+    color: var(--prussian-blue);
+}
+
+video {
+    width: 100%;
+    border-radius: 8px;
+    background: #000;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Footer / Back Link [cite: 26] */
+.footer-nav {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.back-link {
+    color: var(--prussian-blue);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Styling Header Utama */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.menu-icon {
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--lavender-grey); /* Warna Lavender Grey */
+}
+
+/* Side Navigation (Sesuai Gambar Referensi) */
+.sidenav {
+    height: 100%;
+    width: 0; /* Awalnya tertutup */
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: var(--ink-black); /* Tetap Ink Black */
+    overflow-x: hidden;
+    transition: 0.5s; /* Efek slide */
+    padding-top: 60px;
+}
+
+.sidenav-links {
+    padding: 20px 8% 20px 8%;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 3rem; /* Font besar sesuai gambar */
+    color: var(--white);
+    display: block;
+    transition: 0.3s;
+    font-family: 'Serif', Georgia, serif; /* Membuat kesan elegan */
+}
+
+.sidenav small {
+    color: var(--lavender-grey);
+    font-size: 1rem;
+    margin-left: 32px;
+}
+
+.sidenav a:hover {
+    color: var(--highlight-color);
+    padding-left: 50px; /* Efek geser saat hover */
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px; /* Memberi jarak antar tombol */
+    margin-top: 25px;
+    justify-content: flex-start; /* Mengatur tombol ke kiri sesuai gambar kamu */
+}
+
+/* Base style untuk semua tombol */
+button {
+    padding: 10px 24px; /* Ruang napas di dalam tombol (Atas-Bawah, Kiri-Kanan) */
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px; /* Membuat sudut tumpul yang modern */
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Efek transisi halus saat di klik/hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sedikit bayangan agar elegan */
+}
+
+
+.btn-primary {
+    background-color: #1B263B; 
+}
+
+/* Tombol Kedua (Kembali) */
+.btn-secondary {
+    background-color: #778DA9; /* Warna Lavender Grey */
+    color: white;
+}
+
+/* Efek saat kursor diarahkan ke tombol */
+button:hover {
+    transform: translateY(-2px); /* Tombol sedikit naik */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    filter: brightness(1.2); /* Menjadi sedikit lebih terang */
+}
+
+button:active {
+    transform: translateY(0); /* Efek membal saat diklik */
+}
+
+
+:root {
+    --ink-black: #0D1B2A;
+    --prussian-blue: #1B263B;
+    --dusk-blue: #415A77;
+    --lavender-grey: #778DA9;
+    --white: #ffffff;
+}
+
+header {
+    background-color: var(--white);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--lavender-grey);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-family: sans-serif;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    margin-right: auto;
+}
+
+.logo h1 {
+    font-size: 1.4rem;
+    color: var(--ink-black);
+    margin: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dusk-blue);
+    margin: 0 15px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--ink-black);
+}
+
+.btn-join {
+    background-color: var(--ink-black);
+    color: var(--white) !important;
+    padding: 10px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn-join:hover {
+    background-color: var(--prussian-blue);
+    transform: translateY(-2px);
+}
+
+
+:root {
+    --primary: #0D1B2A;
+    --accent: #415A77;
+    --text: #1B263B;
+    --white: #ffffff;
+    --shadow: rgba(13, 27, 42, 0.1);
+}
+
+.audio-card {
+    background: var(--white);
+    padding: 40px 30px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px var(--shadow);
+    max-width: 320px;
+    margin: 50px auto;
+    text-align: center;
+    border: 1px solid rgba(224, 225, 221, 0.5);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    transition: transform 0.3s ease;
+}
+
+.audio-card:hover {
+    transform: translateY(-10px);
+}
+
+.audio-icon {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 40px;
+    gap: 4px;
+    margin-bottom: 20px;
+}
+
+.audio-icon span {
+    width: 6px;
+    height: 10px;
+    background: var(--primary);
+    border-radius: 3px;
+    animation: wave 1.2s infinite ease-in-out;
+}
+
+.audio-icon span:nth-child(2) { height: 30px; animation-delay: 0.2s; }
+.audio-icon span:nth-child(3) { height: 20px; animation-delay: 0.4s; }
+.audio-icon span:nth-child(4) { height: 35px; animation-delay: 0.6s; }
+
+@keyframes wave {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(1.5); }
+}
+
+.audio-card h3 {
+    color: var(--primary);
+    margin: 0;
+    font-size: 1.5rem;
+    letter-spacing: -0.5px;
+}
+
+.audio-card p {
+    color: var(--accent);
+    font-size: 0.85rem;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+.audio-controls {
+    display: flex;
+    gap: 15px;
+}
+
+.audio-controls button {
+    flex: 1;
+    padding: 14px 0;
+    border-radius: 12px;
+    border: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-play {
+    background: var(--primary);
+    color: var(--white);
+    box-shadow: 0 8px 15px rgba(13, 27, 42, 0.2);
+}
+
+.btn-pause {
+    background: #f1f3f5;
+    color: var(--primary);
+}
+
+.audio-controls button:hover {
+    transform: scale(1.05);
+}
+
+.btn-play:hover {
+    background: #1b263b;
+    box-shadow: 0 12px 20px rgba(13, 27, 42, 0.3);
+}
+
+.btn-pause:hover {
+    background: #e9ecef;
+}
