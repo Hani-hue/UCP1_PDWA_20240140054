@@ -26,6 +26,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
             dataAnggota.push({ nama, email, bidangMinat, usia });
 
+            alert("Data Anggota Berhasil Disimpan!\n\n" + 
+                  "Nama: " + dataAnggota[dataAnggota.length - 1].nama + "\n" +
+                  "Email: " + dataAnggota[dataAnggota.length - 1].email + "\n" +
+                  "Minat: " + dataAnggota[dataAnggota.length - 1].minat + "\n" +
+                  "Usia: " + dataAnggota[dataAnggota.length - 1].usia);
+
             memberForm.reset();
         });
     }
