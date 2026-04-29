@@ -3,6 +3,22 @@ let dataAnggota = [];
 document.addEventListener('DOMContentLoaded', function() {
     const memberForm = document.getElementById('memberForm');
 
+    function controlVideo(videoId, action) {
+        const video = document.getElementById(videoId);
+
+        if (video) {
+        if (action === 'play') {
+            video.play();
+        } else if (action === 'stop') {
+            video.pause();
+            video.currentTime = 0; // Mengembalikan video ke awal (Stop)
+        }
+    }
+}
+
+
+
+
     if (memberForm) {
         memberForm.addEventListener('submit', function(e) {
             e.preventDefault();
