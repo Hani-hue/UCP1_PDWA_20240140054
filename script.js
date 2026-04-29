@@ -24,6 +24,25 @@ function playAudio() {
     }
 }
 
+function pauseAudio() {
+    const audio = document.getElementById('myAudio');
+    if (audio) {
+        audio.pause();
+    }
+}
+
+
+
+
+function toggleMenu() {
+    const nav = document.getElementById("sideNav");
+    if (nav.style.width === "100%") {
+        nav.style.width = "0";
+    } else {
+        nav.style.width = "100%"; // Membuka menu secara penuh (overlay)
+    }
+}
+
 
 
 
