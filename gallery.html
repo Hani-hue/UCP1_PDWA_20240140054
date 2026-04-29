@@ -38,6 +38,8 @@
                 </div>
             </div>
             <div class="card">
+                
+    <div class="card">
     <div class="audio-icon" id="visualizer">
         <span></span>
         <span></span>
@@ -48,6 +50,11 @@
     <audio id="myAudio">
         <source src="audio1.m4a" type="audio/mp4">
     </audio>
+
+    <div class="seek-container">
+        <input type="range" id="audioSeekBar" value="0" step="1">
+    </div>
+
     <div class="controls">
         <button onclick="playAudio()" class="btn-play">Play</button>
         <button onclick="pauseAudio()" class="btn-pause">Pause</button>

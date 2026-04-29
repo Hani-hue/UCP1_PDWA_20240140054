@@ -37,18 +37,52 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function playAudio() {
     const audio = document.getElementById('myAudio');
+    const visualizer = document.getElementById('visualizer');
     if (audio) {
         audio.play();
-        alert("Audio sedang diputar!"); 
+        if (visualizer) {
+            visualizer.classList.add('playing');
+        }
     }
 }
 
 function pauseAudio() {
     const audio = document.getElementById('myAudio');
+    const visualizer = document.getElementById('visualizer');
     if (audio) {
         audio.pause();
+        if (visualizer) {
+            visualizer.classList.remove('playing');
+        }
     }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const audio = document.getElementById('myAudio');
+    const audioSeekBar = document.getElementById('audioSeekBar');
+
+    if (audio && audioSeekBar) {
+        audio.addEventListener('loadedmetadata', function() {
+            audioSeekBar.max = Math.floor(audio.duration);
+        });
+
+        audio.addEventListener('timeupdate', function() {
+            audioSeekBar.value = Math.floor(audio.currentTime);
+        });
+
+        audioSeekBar.addEventListener('input', function() {
+            audio.currentTime = audioSeekBar.value;
+        });
+        
+        audio.addEventListener('ended', function() {
+            const visualizer = document.getElementById('visualizer');
+            if (visualizer) {
+                visualizer.classList.remove('playing');
+            }
+            audioSeekBar.value = 0;
+        });
+    }
+});
 
     document.addEventListener('DOMContentLoaded', function() {
    
